@@ -1,7 +1,8 @@
+import React from "react";
 import type { Metadata } from "next";
 
-import Navbar from "../components/Navbar/Navbar";
-import Navbar2 from "../components/Navbar/Navbar2";
+import Navbar from "@/components/Navbar";
+import Navbar2 from "@/components/Navbar2";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
         <Navbar />
         <Navbar2 />
+
         {children}
       </body>
     </html>

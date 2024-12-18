@@ -6,8 +6,8 @@ import {
 } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import NavItemSubMenu from "./NavItemSubMenu";
-import { callsToAction } from "../../utils/data";
+import NavItemSubMenu from "@/components/Navbar/NavItemSubMenu";
+import { callsToAction } from "@/utils/data";
 
 export default function NavItem({ ...props }) {
   console.log(props);

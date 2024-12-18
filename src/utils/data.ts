@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   ArrowPathIcon,
   ChartPieIcon,
@@ -8,13 +6,7 @@ import {
   SquaresPlusIcon,
 } from "@heroicons/react/24/outline";
 import { PhoneIcon, PlayCircleIcon } from "@heroicons/react/20/solid";
-
-interface Product {
-  name: string;
-  description: string;
-  href: string;
-  icon: React.FC<React.SVGProps<SVGSVGElement>>;
-}
+import { CallToAction, Company, Product } from "@/utils/interfaces";
 
 export const products: Product[] = [
   {
@@ -49,21 +41,10 @@ export const products: Product[] = [
   },
 ];
 
-interface CallToAction {
-  name: string;
-  href: string;
-  icon: React.FC<React.SVGProps<SVGSVGElement>>;
-}
-
 export const callsToAction: CallToAction[] = [
   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
   { name: "Contact sales", href: "#", icon: PhoneIcon },
 ];
-
-interface Company {
-  name: string;
-  href: string;
-}
 
 export const company: Company[] = [
   { name: "About us", href: "#" },
