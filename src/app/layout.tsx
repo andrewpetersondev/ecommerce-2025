@@ -1,8 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 
-import Navbar from "@/components/Navbar";
-import Navbar2 from "@/components/Navbar2";
+import Navbar from "@/components/navbar";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -33,7 +32,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <Navbar2 />
 
         {children}
       </body>
