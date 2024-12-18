@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -11,7 +11,7 @@ import {
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
-} from '@headlessui/react'
+} from "@headlessui/react";
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -20,10 +20,14 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-import Image from 'next/image'
-import Link from 'next/link'
+} from "@heroicons/react/24/outline";
+import {
+  ChevronDownIcon,
+  PhoneIcon,
+  PlayCircleIcon,
+} from "@heroicons/react/20/solid";
+import Image from "next/image";
+import Link from "next/link";
 
 interface Product {
   name: string;
@@ -32,13 +36,38 @@ interface Product {
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
-const products : Product[] = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
+const products: Product[] = [
+  {
+    name: "Analytics",
+    description: "Get a better understanding of your traffic",
+    href: "#",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Engagement",
+    description: "Speak directly to your customers",
+    href: "#",
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "Security",
+    description: "Your customers’ data will be safe and secure",
+    href: "#",
+    icon: FingerPrintIcon,
+  },
+  {
+    name: "Integrations",
+    description: "Connect with third-party tools",
+    href: "#",
+    icon: SquaresPlusIcon,
+  },
+  {
+    name: "Automations",
+    description: "Build strategic funnels that will convert",
+    href: "#",
+    icon: ArrowPathIcon,
+  },
+];
 
 interface CallToAction {
   name: string;
@@ -47,32 +76,33 @@ interface CallToAction {
 }
 
 const callsToAction: CallToAction[] = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
+  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
+  { name: "Contact sales", href: "#", icon: PhoneIcon },
+];
 
 interface Company {
   name: string;
   href: string;
 }
 
-const company : Company[] = [
-  { name: 'About us', href: '#' },
-  { name: 'Careers', href: '#' },
-  { name: 'Support', href: '#' },
-  { name: 'Press', href: '#' },
-  { name: 'Blog', href: '#' },
-]
+const company: Company[] = [
+  { name: "About us", href: "#" },
+  { name: "Careers", href: "#" },
+  { name: "Support", href: "#" },
+  { name: "Press", href: "#" },
+  { name: "Blog", href: "#" },
+];
 
 export default function Navbar2() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="bg-white">
-
       {/* Logo and Hamburger Icon */}
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        
+      <nav
+        aria-label="Global"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+      >
         <div className="flex lg:flex-1">
           <Link href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -85,7 +115,7 @@ export default function Navbar2() {
             />
           </Link>
         </div>
-        
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -96,12 +126,15 @@ export default function Navbar2() {
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
-        
+
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
               Product
-              <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-400" />
+              <ChevronDownIcon
+                aria-hidden="true"
+                className="size-5 flex-none text-gray-400"
+              />
             </PopoverButton>
 
             <PopoverPanel
@@ -115,10 +148,16 @@ export default function Navbar2() {
                     className="group relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
                   >
                     <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                      <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
+                      <item.icon
+                        aria-hidden="true"
+                        className="size-6 text-gray-600 group-hover:text-indigo-600"
+                      />
                     </div>
                     <div className="flex-auto">
-                      <Link href={item.href} className="block font-semibold text-gray-900">
+                      <Link
+                        href={item.href}
+                        className="block font-semibold text-gray-900"
+                      >
                         {item.name}
                         <span className="absolute inset-0" />
                       </Link>
@@ -134,7 +173,10 @@ export default function Navbar2() {
                     href={item.href}
                     className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100"
                   >
-                    <item.icon aria-hidden="true" className="size-5 flex-none text-gray-400" />
+                    <item.icon
+                      aria-hidden="true"
+                      className="size-5 flex-none text-gray-400"
+                    />
                     {item.name}
                   </Link>
                 ))}
@@ -152,7 +194,10 @@ export default function Navbar2() {
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
               Company
-              <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-400" />
+              <ChevronDownIcon
+                aria-hidden="true"
+                className="size-5 flex-none text-gray-400"
+              />
             </PopoverButton>
 
             <PopoverPanel
@@ -171,21 +216,23 @@ export default function Navbar2() {
             </PopoverPanel>
           </Popover>
         </PopoverGroup>
-        
+
         {/* Login */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link href="#" className="text-sm/6 font-semibold text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
-      
       </nav>
 
-{/* Content of Mobile Nav Menu */}
-      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
-        
+      {/* Content of Mobile Nav Menu */}
+      <Dialog
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+        className="lg:hidden"
+      >
         <div className="fixed inset-0 z-10" />
-      
+
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="#" className="-m-1.5 p-1.5">
@@ -213,7 +260,10 @@ export default function Navbar2() {
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
                     Product
-                    <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
+                    <ChevronDownIcon
+                      aria-hidden="true"
+                      className="size-5 flex-none group-data-open:rotate-180"
+                    />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
                     {[...products, ...callsToAction].map((item) => (
@@ -245,7 +295,10 @@ export default function Navbar2() {
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
                     Company
-                    <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
+                    <ChevronDownIcon
+                      aria-hidden="true"
+                      className="size-5 flex-none group-data-open:rotate-180"
+                    />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
                     {company.map((item) => (
@@ -272,9 +325,7 @@ export default function Navbar2() {
             </div>
           </div>
         </DialogPanel>
-      
       </Dialog>
-
     </header>
-  )
+  );
 }
