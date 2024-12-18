@@ -3,13 +3,17 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import ProfileDropdown from './profile-dropdown'
+// import Link from 'next/link'
+// import NavItemSubMenu from './NavItemSubMenu'
+import NavItem from './NavItem'
+import navigation from '../../utils/navigation'
 
-const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-]
+// const navigation = [
+//   { name: 'Dashboard', href: '#', current: true },
+//   { name: 'Team', href: '#', current: false },
+//   { name: 'Projects', href: '#', current: false },
+//   { name: 'Calendar', href: '#', current: false },
+// ]
 
 // TODO: this is a bad idea
 // i think this will cause issues
@@ -35,8 +39,10 @@ export default function Navbar() {
             </DisclosureButton>
           </div>
 
+
+
           {/* Logo and NavLinks */}
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          {/* <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
               <Image
                 alt="Your Company"
@@ -60,6 +66,26 @@ export default function Navbar() {
                   >
                     {item.name}
                   </a>
+                ))}
+              </div>
+            </div>
+          </div> */}
+
+          {/* Logo and NavLinks */}
+          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div className="flex shrink-0 items-center">
+              <Image
+                alt="Your Company"
+                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+                className="h-8 w-auto"
+                width={500}
+                height={500}
+              />
+            </div>
+            <div className="hidden sm:ml-6 sm:block">
+              <div className="flex space-x-4">
+                {navigation.map((navItem) => (
+                  <NavItem key={navItem.name} {...navItem} />
                 ))}
               </div>
             </div>

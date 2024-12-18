@@ -1,4 +1,4 @@
-interface Navigation {
+export interface Navigation {
     name: string,
     section: string,
     href: string,
