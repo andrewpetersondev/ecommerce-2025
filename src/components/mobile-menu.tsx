@@ -1,40 +1,48 @@
 import React from "react";
 import {
+  Dialog,
+  DialogPanel,
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Dialog,
-  DialogPanel,
 } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import Link from "next/link";
-import { Product, CallToAction, Company } from "@/utils/interfaces";
+import { CallToAction, Company, Product } from "@/utils/interfaces";
 
 interface Props {
-  mobileMenuOpen: boolean;
-  setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isMobileMenuOpen: boolean;
+  toggleMobileMenu: () => void;
   products: Product[];
   callsToAction: CallToAction[];
   company: Company[];
 }
 
 export default function MobileMenu({
-  mobileMenuOpen,
-  setMobileMenuOpen,
+  isMobileMenuOpen,
+  toggleMobileMenu,
   products,
   callsToAction,
   company,
 }: Props) {
   return (
     <Dialog
-      open={mobileMenuOpen}
-      onClose={setMobileMenuOpen}
+      open={isMobileMenuOpen}
+      onClose={toggleMobileMenu}
       className="lg:hidden"
+      aria-labelledby="mobile-menu-title"
+      aria-describedby="mobile-menu-description"
     >
       <div className="fixed inset-0 z-10" />
       <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <h2 id="mobile-menu-title" className="sr-only">
+          Mobile Menu
+        </h2>
+        <p id="mobile-menu-description" className="sr-only">
+          Navigate through the menu items below.
+        </p>
         <div className="flex items-center justify-between">
           <Link href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -47,11 +55,11 @@ export default function MobileMenu({
             />
           </Link>
           <button
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={toggleMobileMenu}
             className="-m-2.5 rounded-md p-2.5 text-gray-700"
           >
             <span className="sr-only">Close menu</span>
-            <XMarkIcon aria-hidden="true" className="size-6" />
+            <XMarkIcon aria-hidden="true" className="size-6 h-6 w-6" />
           </button>
         </div>
 
@@ -60,6 +68,8 @@ export default function MobileMenu({
             <div className="space-y-2 py-6">
               <Disclosure as="div" className="-mx-3">
                 <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                  {/*TODO: fix aria-expanded later*/}
+                  {/*aria-expanded="true or false" > // (Managed dynamically by Headless UI)*/}
                   Product
                   <ChevronDownIcon
                     aria-hidden="true"
@@ -67,9 +77,9 @@ export default function MobileMenu({
                   />
                 </DisclosureButton>
                 <DisclosurePanel className="mt-2 space-y-2">
-                  {[...products, ...callsToAction].map((item) => (
+                  {[...products, ...callsToAction].map((item, index) => (
                     <DisclosureButton
-                      key={item.name}
+                      key={`${item.name}--${index}`}
                       as="a"
                       href={item.href}
                       className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50"
