@@ -2,12 +2,12 @@ import React from "react";
 import {
   Popover,
   PopoverButton,
-  PopoverPanel,
   PopoverGroup,
+  PopoverPanel,
 } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
-import { Product, CallToAction, Company } from "@/utils/interfaces"; // Define types in a dedicated types file
+import { CallToAction, Company, Product } from "@/utils/interfaces"; // Define types in a dedicated types file
 
 interface Props {
   products: Product[];

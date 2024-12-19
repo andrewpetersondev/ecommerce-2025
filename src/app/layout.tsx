@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 
-import Navbar from "@/components/navbar";
+import Navbar from "@/ui/navbar";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";

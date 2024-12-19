@@ -8,9 +8,9 @@ import {
 } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import Image from "next/image";
 import Link from "next/link";
 import { CallToAction, Company, Product } from "@/utils/interfaces";
+import { DialogPanelLogo } from "@/components/logo"; // Props are used to pass down the state and handlers for toggling the menu visibility,
 
 // Props are used to pass down the state and handlers for toggling the menu visibility,
 // as well as the menu items (products, calls to action, and company details) from the parent Navbar component.
@@ -21,6 +21,7 @@ interface Props {
   callsToAction: CallToAction[];
   company: Company[];
 }
+
 // The MobileMenu component is designed as an overlay dialog for mobile devices,
 // enabling navigation with a structured menu and preserving accessibility.
 export default function MobileMenu({
@@ -53,17 +54,7 @@ export default function MobileMenu({
         </p>
         {/* Company logo and close button are placed on the top for quick access */}
         <div className="flex items-center justify-between">
-          <Link href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <Image
-              // Placeholder logo - replace with dynamic branding if necessary.
-              alt="Your Company"
-              width={600}
-              height={600}
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-              className="h-8 w-auto"
-            />
-          </Link>
+          <DialogPanelLogo />
           <button
             // Close button triggers the 'toggleMobileMenu' function to hide the menu.
             onClick={toggleMobileMenu}
@@ -154,6 +145,6 @@ export default function MobileMenu({
       </DialogPanel>
     </Dialog>
     /* MobileMenu is placed outside <nav> in the Navbar component to isolate it
-        for accessibility and DOM hierarchy reasons. Dialog works independently to enhance focus trapping */
+                    for accessibility and DOM hierarchy reasons. Dialog works independently to enhance focus trapping */
   );
 }
