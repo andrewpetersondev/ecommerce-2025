@@ -19,10 +19,13 @@ export default function Navbar() {
 
   return (
     <header className="bg-white">
+      {/* Global navigation container */}
       <nav aria-label="Global" className={NAV_CLASSES}>
+        {/* Logo container: displayed on both desktop and mobile */}
         <div className="flex lg:flex-1">
           <Logo />
         </div>
+        {/* Mobile menu toggle: only visible on small screens */}
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -33,8 +36,10 @@ export default function Navbar() {
             <Bars3Icon aria-hidden="true" className="size-6 h-6 w-6" />
           </button>
         </div>
+        {/* Desktop Navigation: visible only on larger screens */}
         <DesktopNavigation {...navigationData} />
       </nav>
+      {/* Mobile Menu: rendered conditionally when toggled */}
       <MobileMenu
         isMobileMenuOpen={isMobileMenuOpen}
         toggleMobileMenu={toggleMobileMenu}

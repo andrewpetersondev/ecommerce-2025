@@ -22,23 +22,29 @@ export default function DesktopNavigation({
 }: Props) {
   return (
     <>
+      {/* Group of navigation items for desktop */}
       <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-        {/* Product Popover */}
+        {/* Product Popover: Dropdown displaying products and actions */}
         <Popover className="relative">
           <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
             Product
+            {/* Dropdown indicator Icon */}
             <ChevronDownIcon
               aria-hidden="true"
               className="size-5 flex-none text-gray-400"
             />
           </PopoverButton>
+
+          {/* PopoverPanel containing product links and actions */}
           <PopoverPanel className="absolute top-full -left-8 z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white ring-1 shadow-lg ring-gray-900/5">
             <div className="p-4">
+              {/* Mapping through product items */}
               {products.map((item) => (
                 <div
                   key={item.name}
                   className="group relative flex gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
                 >
+                  {/* Product Icon */}
                   <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                     <item.icon
                       aria-hidden="true"
@@ -46,6 +52,7 @@ export default function DesktopNavigation({
                     />
                   </div>
                   <div className="flex-auto">
+                    {/* Product Name (Link) */}
                     <Link
                       href={item.href}
                       className="block font-semibold text-gray-900"
@@ -53,11 +60,13 @@ export default function DesktopNavigation({
                       {item.name}
                       <span className="absolute inset-0" />
                     </Link>
+                    {/* Product Description */}
                     <p className="mt-1 text-gray-600">{item.description}</p>
                   </div>
                 </div>
               ))}
             </div>
+            {/* Divided actions displayed under products */}
             <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
               {callsToAction.map((item) => (
                 <Link
@@ -76,6 +85,7 @@ export default function DesktopNavigation({
           </PopoverPanel>
         </Popover>
 
+        {/* Simple navigation links */}
         <Link href="#" className="text-sm/6 font-semibold text-gray-900">
           Features
         </Link>
@@ -83,16 +93,20 @@ export default function DesktopNavigation({
           Marketplace
         </Link>
 
-        {/* Company Popover */}
+        {/* Company Popover: Dropdown displaying company links */}
         <Popover className="relative">
           <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
             Company
+            {/* Dropdown indicator Icon */}
             <ChevronDownIcon
               aria-hidden="true"
               className="size-5 flex-none text-gray-400"
             />
           </PopoverButton>
+
+          {/* PopoverPanel containing company links */}
           <PopoverPanel className="absolute top-full -left-8 z-10 mt-3 w-56 rounded-xl bg-white p-2 ring-1 shadow-lg ring-gray-900/5">
+            {/* Mapping through company links */}
             {company.map((item) => (
               <Link
                 key={item.name}
@@ -105,6 +119,8 @@ export default function DesktopNavigation({
           </PopoverPanel>
         </Popover>
       </PopoverGroup>
+
+      {/* Right-aligned section */}
       <div className="hidden lg:flex lg:flex-1 lg:justify-end">
         <Link href="#" className="text-sm/6 font-semibold text-gray-900">
           Log in <span aria-hidden="true">&rarr;</span>
