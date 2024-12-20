@@ -12,6 +12,7 @@ import Link from "next/link";
 import { CallToAction, Company, Product } from "@/utils/interfaces";
 import { DialogPanelLogo } from "@/components/logo";
 import { MobileDialogLogin } from "@/components/login-button";
+import { MobileMenuDisclosureProductButton } from "@/components/mobile-menu-disclosure-buttons";
 
 // Props are used to pass down the state and handlers for toggling the menu visibility,
 // Props are used to pass down the state and handlers for toggling the menu visibility,
@@ -85,15 +86,10 @@ export default function MobileMenu({
                 </DisclosureButton>
                 <DisclosurePanel className="mt-2 space-y-2">
                   {[...products, ...callsToAction].map((item, index) => (
-                    // Combines multiple dynamic lists (products and callsToAction) for combined display in Product section.
-                    <DisclosureButton
+                    <MobileMenuDisclosureProductButton
                       key={`${item.name}--${index}`}
-                      as="a"
-                      href={item.href}
-                      className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50"
-                    >
-                      {item.name}
-                    </DisclosureButton>
+                      item={item}
+                    />
                   ))}
                 </DisclosurePanel>
               </Disclosure>

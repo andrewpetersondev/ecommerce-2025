@@ -100,7 +100,7 @@ export default function DesktopNavigation({
             className="fixed inset-0 bg-black/15 transition duration-100 ease-out data-[closed]:opacity-0"
           />
           {/* PopoverPanel containing company links */}
-          <PopoverPanel className="absolute top-full -left-8 z-10 mt-3 w-56 rounded-xl bg-white p-2 ring-1 shadow-lg ring-gray-900/5">
+          <PopoverPanel className="absolute top-full -left-8 z-10 mt-3 w-56 rounded-xl bg-white p-2 ring-1 shadow-lg ring-gray-900/5 transition duration-300 ease-out data-[closed]:scale-95 data-[closed]:opacity-0">
             <div className="p-4">
               {/* Mapping through company links */}
               {company.map((item, index) => (
