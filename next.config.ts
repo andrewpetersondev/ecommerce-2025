@@ -13,6 +13,14 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "tailwindui.com",
+        port: "",
+        pathname:
+          "/plus/img/ecommerce-images/home-page-03-feature-section-full-width.jpg",
+        search: "",
+      },
+      {
+        protocol: "https",
 
         hostname: "images.unsplash.com",
         port: "",
