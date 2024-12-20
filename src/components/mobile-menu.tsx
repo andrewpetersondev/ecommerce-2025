@@ -80,7 +80,7 @@ export default function MobileMenu({
                   Product
                   <ChevronDownIcon
                     aria-hidden="true"
-                    className="size-5 flex-none group-data-open:rotate-180"
+                    className="size-5 flex-none group-data-[open]:rotate-180"
                   />
                 </DisclosureButton>
                 <DisclosurePanel className="mt-2 space-y-2">
@@ -115,7 +115,7 @@ export default function MobileMenu({
                   Company
                   <ChevronDownIcon
                     aria-hidden="true"
-                    className="size-5 flex-none group-data-open:rotate-180"
+                    className="size-5 flex-none group-data-[open]:rotate-180"
                   />
                 </DisclosureButton>
                 <DisclosurePanel className="mt-2 space-y-2">
