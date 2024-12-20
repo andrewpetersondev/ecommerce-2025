@@ -12,44 +12,44 @@ export const products: Product[] = [
   {
     name: "Analytics",
     description: "Get a better understanding of your traffic",
-    href: "#",
+    href: "/product/analytics",
     icon: ChartPieIcon,
   },
   {
     name: "Engagement",
     description: "Speak directly to your customers",
-    href: "#",
+    href: "/product/engagement",
     icon: CursorArrowRaysIcon,
   },
   {
     name: "Security",
     description: "Your customers’ data will be safe and secure",
-    href: "#",
+    href: "/product/security",
     icon: FingerPrintIcon,
   },
   {
     name: "Integrations",
     description: "Connect with third-party tools",
-    href: "#",
+    href: "/product/integrations",
     icon: SquaresPlusIcon,
   },
   {
     name: "Automations",
     description: "Build strategic funnels that will convert",
-    href: "#",
+    href: "/product/automations",
     icon: ArrowPathIcon,
   },
 ];
 
 export const callsToAction: CallToAction[] = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
+  { name: "Watch demo", href: "/watch", icon: PlayCircleIcon },
+  { name: "Contact sales", href: "/contact", icon: PhoneIcon },
 ];
 
 export const company: Company[] = [
-  { name: "About us", href: "#" },
-  { name: "Careers", href: "#" },
-  { name: "Support", href: "#" },
-  { name: "Press", href: "#" },
-  { name: "Blog", href: "#" },
+  { name: "About us", href: "/about" },
+  { name: "Careers", href: "/careers" },
+  { name: "Support", href: "/support" },
+  { name: "Press", href: "/press" },
+  { name: "Blog", href: "/blog" },
 ];
