@@ -7,7 +7,8 @@ import {
 } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
-import { CallToAction, Company, Product } from "@/utils/interfaces"; // Define types in a dedicated types file
+import { CallToAction, Company, Product } from "@/utils/interfaces";
+import { NavbarLogin } from "@/components/login-button"; // Define types in a dedicated types file
 
 interface Props {
   products: Product[];
@@ -121,11 +122,7 @@ export default function DesktopNavigation({
       </PopoverGroup>
 
       {/* Right-aligned section */}
-      <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-        <Link href="#" className="text-sm/6 font-semibold text-gray-900">
-          Log in <span aria-hidden="true">&rarr;</span>
-        </Link>
-      </div>
+      <NavbarLogin />
     </>
   );
 }

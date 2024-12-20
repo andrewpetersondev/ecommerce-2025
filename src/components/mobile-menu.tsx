@@ -10,8 +10,10 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { CallToAction, Company, Product } from "@/utils/interfaces";
-import { DialogPanelLogo } from "@/components/logo"; // Props are used to pass down the state and handlers for toggling the menu visibility,
+import { DialogPanelLogo } from "@/components/logo";
+import { MobileDialogLogin } from "@/components/login-button";
 
+// Props are used to pass down the state and handlers for toggling the menu visibility,
 // Props are used to pass down the state and handlers for toggling the menu visibility,
 // as well as the menu items (products, calls to action, and company details) from the parent Navbar component.
 interface Props {
@@ -132,19 +134,12 @@ export default function MobileMenu({
               </Disclosure>
             </div>
             {/* Additional standalone navigation options like login are outside collapsible areas */}
-            <div className="py-6">
-              <Link
-                href="#"
-                className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-              >
-                Log in
-              </Link>
-            </div>
+            <MobileDialogLogin />
           </div>
         </div>
       </DialogPanel>
     </Dialog>
     /* MobileMenu is placed outside <nav> in the Navbar component to isolate it
-                    for accessibility and DOM hierarchy reasons. Dialog works independently to enhance focus trapping */
+                                for accessibility and DOM hierarchy reasons. Dialog works independently to enhance focus trapping */
   );
 }
