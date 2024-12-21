@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/plus/img/logos/mark.svg?color=indigo&shade=500",
       },
+
       {
         protocol: "https",
         hostname: "tailwindui.com",
@@ -21,10 +22,15 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-
         hostname: "images.unsplash.com",
         port: "",
         pathname: "/photo-1472099645785-5658abf4ff4e*",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/photo-1496917756835-20cb06e75b4e*",
       },
     ],
   },

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Logo() {
   return (
-    <Link href="#" className="-m-1.5 p-1.5">
+    <Link href="/" className="-m-1.5 p-1.5">
       <span className="sr-only">Your Company</span>
       <Image
         alt="Your Company"
@@ -36,7 +36,7 @@ export function NavbarLogo() {
 
 export function DialogPanelLogo() {
   return (
-    <Link href="#" className="-m-1.5 p-1.5">
+    <Link href="/" className="-m-1.5 p-1.5">
       <span className="sr-only">Your Company</span>
       <Image
         alt="Your Company"

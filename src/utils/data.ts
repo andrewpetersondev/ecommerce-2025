@@ -42,14 +42,14 @@ export const products: Product[] = [
 ];
 
 export const callsToAction: CallToAction[] = [
-  { name: "Watch demo", href: "/watch", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "/contact", icon: PhoneIcon },
+  { name: "Watch demo", href: "/product/watch-demo", icon: PlayCircleIcon },
+  { name: "Contact sales", href: "/product/contact-sales", icon: PhoneIcon },
 ];
 
 export const company: Company[] = [
-  { name: "About us", href: "/about" },
-  { name: "Careers", href: "/careers" },
-  { name: "Support", href: "/support" },
-  { name: "Press", href: "/press" },
-  { name: "Blog", href: "/blog" },
+  { name: "About us", href: "/company/about-us" },
+  { name: "Careers", href: "/company/careers" },
+  { name: "Support", href: "/company/support" },
+  { name: "Press", href: "/company/press" },
+  { name: "Blog", href: "/company/blog" },
 ];
